@@ -1,3 +1,17 @@
+# Estrutura
+
+"""
+
+QApplication (app)
+    CentralWidget (central_widget)
+        Layout (layout)
+            Widget (botao1)
+            Widget (botao2)
+    Show CentralWidget (central_widget.show)
+Execute QApplication (app.exec)
+
+"""
+
 import sys
 from PySide6.QtWidgets import QApplication, QPushButton, QWidget, QGridLayout
 
@@ -13,7 +27,7 @@ central_widget.setLayout(layout)
 
 # Criando os botões para o widget
 botao1 = QPushButton('Botão 1')
-botao2 = QPushButton('Botão 1')
+botao2 = QPushButton('Botão 2')
 
 # Adicionando os Widgets dentro do layout
 layout.addWidget(botao1, 1, 2)
