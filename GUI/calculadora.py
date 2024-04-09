@@ -72,10 +72,36 @@ layout.addWidget(dividir, 5, 4)
 status_bar = window.statusBar()
 status_bar.showMessage('Mostrar Mensagem')
 
+# slot
+
+
+def verifica_status(checked):
+    print('Está marcado?', checked)
+
+
+def muda_status(status_bar):
+    status_bar.showMessage('Status trocado')
+
+
+def slot_fecha_rograma():
+    exit()
+
 # menuBar
 
+
 menu = window.menuBar()
-menu.addMenu('Sair')
+menu_principal = menu.addMenu('Arquivo')
+
+menu_opcao_1 = menu_principal.addAction('muda_status')
+menu_opcao_1.triggered.connect(
+    lambda: muda_status(status_bar)
+)
+menu_opcao_1.setCheckable(True)
+menu_opcao_1.toggled.connect(verifica_status)
+
+menu_opcao_2 = menu_principal.addAction('Sair')
+menu_opcao_2.triggered.connect(slot_fecha_rograma)
+
 
 # Visualização da nossa Central exibindo o layout iniciado
 window.show()
