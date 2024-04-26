@@ -23,9 +23,12 @@ def lerExcel():
     df = pd.read_excel('cnpj.xlsx', sheet_name='cnpj')
 
     # Armazenar a coluna desejada em uma variavel lista
-
     cnpjs = df['cnpj'].tolist()
 
+    # faz a leitura item por item para completar cnpj
+    # excel exclui 0 a esquerda então aqui ele completa
+    # a quantidade de 0 necessárias para que o cnpj tenha
+    # os 14 numeros
     for i in range(len(cnpjs)):
         cnpjs[i] = str(cnpjs[i])
 
