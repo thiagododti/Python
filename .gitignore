@@ -161,4 +161,4 @@ cython_debug/
 
 # Personalizado
 
-.xlsx
+*.xlsx
