@@ -2,6 +2,7 @@ import requests
 import csv
 import time
 import pandas as pd
+import os
 
 
 field_names = ['#', 'razao_social', 'atualizado_em', 'natureza_juridica',
@@ -55,9 +56,8 @@ def consultaCnpj(cnpjParaConsulta):
 
 
 def gravaExcel(cnpjTratado):
-    with open('cnpjconsultado/cnpjs consultados.csv', 'w') as csvfile:
+    with open('cnpjconsultado/cnpjs-consultados.csv', 'a') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=field_names)
-        writer.writeheader()
         writer.writerows(cnpjTratado)
     return print(f"{contador} / {len(cnpjs)} cnpj verificado ")
 
@@ -70,6 +70,7 @@ def carregaDados(cnpjConsultado):
     global contador
 
     if len(cnpjConsultado['estabelecimento']['inscricoes_estaduais']) > 0:
+        inscricao = []
         for x in range(len(cnpjConsultado['estabelecimento']['inscricoes_estaduais'])):
             inscricao.append({
                 "#": contador,
@@ -100,6 +101,7 @@ def carregaDados(cnpjConsultado):
             })
             contador = contador + 1
     else:
+        inscricao = []
         inscricao.append({
             "#": contador,
             "cnpj": cnpjConsultado['estabelecimento']['cnpj'],
@@ -137,6 +139,9 @@ for cnpj in cnpjs:
     consulta = consultaCnpj(cnpj)
     if consulta:
         carregaDados(consulta)
-
+    if not os.path.exists('cnpjconsultado/cnpjs-consultados.csv'):
+        with open('cnpjconsultado/cnpjs-consultados.csv', 'w') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=field_names)
+            writer.writeheader()
     gravaExcel(inscricao)
     time.sleep(20)
