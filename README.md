@@ -8,12 +8,26 @@ Minha paixão pela programação me motiva a continuar aprendendo e enfrentando 
 
 Estou empenhado em aprimorar minhas habilidades e estou aberto a oportunidades que me permitam crescer e contribuir com meus conhecimentos
 
+## Conect-se comigo
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-f70b0b?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thiagododti/)
+[![Instagram](https://img.shields.io/badge/-Instagram-f70b0b?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/iam.thiago/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-f70b0b?style=for-the-badge&logo=todoist&logoColor=white)]([https://seulink.com](https://thiagododti.github.io/portfolio/index.html))
+
 ## Habilidades
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![SQLServer](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
-![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-![Power Bi](https://img.shields.io/badge/power_bi-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![PHP](https://img.shields.io/badge/php-f70b0b.svg?style=for-the-badge&logo=php&logoColor=white)
+![Python](https://img.shields.io/badge/python-f70b0b?style=for-the-badge&logo=python&logoColor=ffdd54)
+![MySQL](https://img.shields.io/badge/mysql-f70b0b.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![SQLServer](https://img.shields.io/badge/SQL%20Server-f70b0b?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
+![SQLite](https://img.shields.io/badge/sqlite-f70b0b.svg?style=for-the-badge&logo=sqlite&logoColor=white)
+![Power Bi](https://img.shields.io/badge/power_bi-f70b0b?style=for-the-badge&logo=powerbi&logoColor=white)
+
+## Status GitHub
+
+![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=thiagododti&layout=compact&bg_color=000&border_color=30A3DC&title_color=E94D5F&text_color=FFF)
+
+
+## Minhas Contribuições
+
+[![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=thiagododti&repo=Python&bg_color=000&border_color=30A3DC&show_icons=true&icon_color=30A3DC&title_color=E94D5F&text_color=FFF)](https://github.com/thiagododti/Python)
+[![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=thiagododti&repo=treino_responsividade&bg_color=000&border_color=30A3DC&show_icons=true&icon_color=30A3DC&title_color=E94D5F&text_color=FFF)](https://github.com/thiagododti/treino_responsividade)
