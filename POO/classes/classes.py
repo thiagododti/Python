@@ -4,7 +4,8 @@
 # Os objetos gerados pela classe podem usar seus dados
 # internos para realizar várias ações.
 # Por convenção, usamos PascalCase para nomes de classes
-# Hard coded - É algo que foi escrito diretamente na classe! self.nome = 'Thiago'
+# Hard coded - É algo que foi escrito diretamente na classe!
+# self.nome = 'Thiago'
 # assim toda classe vai ter o mesmo nome atribuído nela.
 
 class Pessoa:  # Nome da nossa Classe
