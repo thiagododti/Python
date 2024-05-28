@@ -29,6 +29,8 @@ class Ornitorrinco(Mamifero, Ave):
     def __init__(self, cor_pelo, cor_bico, num_patas):
         super().__init__(cor_pelo=cor_pelo,
                          cor_bico=cor_bico, num_patas=num_patas)
+        # print(Ornitorrinco.__mro__)
+        # print(Ornitorrinco.mro())
 
 
 o = Ornitorrinco(num_patas=2, cor_pelo="Marron", cor_bico="Laranja")
@@ -55,3 +57,13 @@ print(o)
 
 # assim ele vai buscar o método esta vivo nessa ordem até ele encontrar
 # o método na classe Animal.
+
+# Obs: Se o mesmo método existir em todas as classes, ele vai executar
+# somente o primeiro que for encontrado.
+
+# Caso esteja com a duvida de como está a ordem das heranças codificadas
+# basta usar o método mro() que ele vai exibir como está a ordem aplicada
+# print(Ornitorrinco.__mro__)
+# print(Ornitorrinco.mro())
+
+print(Ornitorrinco.mro())
