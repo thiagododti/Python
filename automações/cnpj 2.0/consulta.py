@@ -4,7 +4,7 @@
 # Após instalar as dependências, execute o código abaixo para ele criar o arquivo Excel para inserir os cnpjs na coluna cnpj
 
 # Após listar os cnpjs que vão ser consultados no arquivo cnpj.xlsx basta executar o código novamente para ele fazer
-#a consulta no site https://publica.cnpj.ws/ e gerar o arquivo cnpjs-consultados.csv com os dados consultados.
+# a consulta no site https://publica.cnpj.ws/ e gerar o arquivo cnpjs-consultados.csv com os dados consultados.
 
 import requests
 import csv
