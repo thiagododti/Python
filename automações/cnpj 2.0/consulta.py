@@ -1,3 +1,10 @@
+# Instale as dependências necessárias com o comando abaixo
+# pip install requests pandas openpyxl
+
+# Após instalar as dependências, execute o código abaixo para ele criar o arquivo Excel para inserir os cnpjs na coluna cnpj
+
+# e depois executar o código novamente para ele fazer a consulta no site https://publica.cnpj.ws/ e gerar o arquivo cnpjs-consultados.csv com os dados consultados.
+
 import requests
 import csv
 import time
@@ -36,20 +43,25 @@ def count(total):
 
 
 def lerExcel():
+    # Verificar se o arquivo existe
+    if not os.path.exists('cnpj.xlsx'):
+        # Criar o arquivo e adicionar a coluna 'cnpj' caso não exista
+        df = pd.DataFrame(columns=['cnpj'])
+        df.to_excel('cnpj.xlsx', index=False)
+        print("Arquivo 'cnpj.xlsx' criado com a coluna 'cnpj'.")
 
     # Ler a lista do arquivo Excel
     df = pd.read_excel('cnpj.xlsx')
 
-    # Armazenar a coluna desejada em uma variavel lista
+    # Armazenar a coluna desejada em uma variável lista
     cnpjs = df['cnpj'].tolist()
 
-    # faz a leitura item por item para completar cnpj
-    # excel exclui 0 a esquerda então aqui ele completa
-    # a quantidade de 0 necessárias para que o cnpj tenha
-    # os 14 numeros
+    # Faz a leitura item por item para completar o CNPJ
+    # Excel exclui 0 à esquerda, então aqui ele completa
+    # a quantidade de 0 necessárias para que o CNPJ tenha
+    # os 14 números
     for i in range(len(cnpjs)):
         cnpjs[i] = str(cnpjs[i])
-
         cnpjs[i] = cnpjs[i].zfill(14)
 
     return cnpjs
