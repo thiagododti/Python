@@ -3,7 +3,7 @@ import csv
 import time
 import pandas as pd
 import os
-
+import sys
 
 field_names = ['#', 'razao_social', 'atualizado_em', 'natureza_juridica',
                'cnpj', 'nome_fantasia', 'situacao_cadastral',
@@ -18,10 +18,27 @@ contador = 0
 # Ler o Excel
 
 
+def progress_bar(total, progress):
+    bar_length = 40  # comprimento da barra de progresso
+    block = int(round(bar_length * progress / total))
+    text = f"\rProgress: [{'#' * block + '-' *
+                           (bar_length - block)}] {progress}/{total}"
+    sys.stdout.write(text)
+    sys.stdout.flush()
+
+
+# Exemplo de
+def count(total):
+
+    for i in range(total + 1):
+        progress_bar(total, i)
+        time.sleep(1)  # Simula o tempo de processamento
+
+
 def lerExcel():
 
     # Ler a lista do arquivo Excel
-    df = pd.read_excel('cnpj.xlsx', sheet_name='cnpj')
+    df = pd.read_excel('cnpj.xlsx')
 
     # Armazenar a coluna desejada em uma variavel lista
     cnpjs = df['cnpj'].tolist()
@@ -56,10 +73,17 @@ def consultaCnpj(cnpjParaConsulta):
 
 
 def gravaExcel(cnpjTratado):
-    with open('cnpjconsultado/cnpjs-consultados.csv', 'a') as csvfile:
+    # Usar o modo 'a' com newline='' para evitar linhas extras
+    with open('cnpjconsultado/cnpjs-consultados.csv', 'a', newline='', encoding='utf-8') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=field_names)
+
+        # Adiciona o cabeçalho apenas se o arquivo estiver vazio
+        if csvfile.tell() == 0:
+            writer.writeheader()
+
         writer.writerows(cnpjTratado)
-    return print(f"{contador} / {len(cnpjs)} cnpj verificado ")
+
+    print(f"{contador} / {len(cnpjs)} cnpj verificado ")
 
 
 # Carrega a lista com os dados
@@ -139,9 +163,16 @@ for cnpj in cnpjs:
     consulta = consultaCnpj(cnpj)
     if consulta:
         carregaDados(consulta)
+
+    # Verifica se o diretório 'cnpjconsultado' existe, se não, cria
+    if not os.path.exists('cnpjconsultado'):
+        os.makedirs('cnpjconsultado')
+
+    # Verifica se o arquivo 'cnpjs-consultados.csv' existe, se não, cria
     if not os.path.exists('cnpjconsultado/cnpjs-consultados.csv'):
-        with open('cnpjconsultado/cnpjs-consultados.csv', 'w') as csvfile:
+        with open('cnpjconsultado/cnpjs-consultados.csv', 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=field_names)
             writer.writeheader()
+    os.system('cls' if os.name == 'nt' else 'clear')
     gravaExcel(inscricao)
-    time.sleep(20)
+    count(25)
