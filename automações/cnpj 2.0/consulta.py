@@ -18,7 +18,7 @@ field_names = ['#', 'razao_social', 'atualizado_em', 'natureza_juridica',
                'data_inicio_atividade', 'logradouro', 'numero',
                'bairro', 'cidade', 'cep', 'estado',
                'ibge_id', 'ddd1', 'telefone1', 'ddd2', 'telefone2',
-               'email', 'atividade_principal', 'inscricao_estadual',
+               'email', 'cnae', 'atividade_principal', 'inscricao_estadual',
                'ativo', 'estado_ie', 'atualizado_em_ie']
 inscricao = []
 contador = 0
